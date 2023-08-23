@@ -19,15 +19,14 @@ class OtpController extends GetxController {
           await FirebaseAuth.instance.signInWithCredential(credential);
       if (userCredential.user != null) {
         log('Login Sucess');
-        Future.delayed(const Duration(seconds: 2), () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Login successful!'),
-              backgroundColor: Colors.green,
-            ),
-          );
-        });
         Get.offAll(const MedicineListScreen());
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Login successful!'),
+            backgroundColor: Colors.green,
+          ),
+        );
       }
     } on FirebaseAuthException catch (ex) {
       log("error message otp: $ex");

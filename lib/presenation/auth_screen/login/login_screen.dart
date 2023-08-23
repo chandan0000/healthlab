@@ -45,22 +45,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 40,
                 ),
-                Obx(
-                  () => SizedBox(
-                    width: 200,
-                    child: loginController.isLoading.value
-                        ? const Center(
-                            child: CircularProgressIndicator(),
-                          )
-                        : ElevatedButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                loginController.verifyPhoneNumber(
-                                    phoneNumber: _phoneNumberController.text);
-                              }
-                            },
-                            child: const Text("Continue"),
-                          ),
+                SizedBox(
+                  width: 200,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        loginController.verifyPhoneNumber(
+                            phoneNumber: _phoneNumberController.text);
+                      }
+                    },
+                    child: Obx(
+                      () => loginController.isLoading.value
+                          ? const Center(
+                              child: CircularProgressIndicator(),
+                            )
+                          : const Text("Continue"),
+                    ),
                   ),
                 ),
                 const Spacer(),

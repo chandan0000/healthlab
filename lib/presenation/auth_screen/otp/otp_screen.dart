@@ -17,13 +17,13 @@ class _OtpScreenState extends State<OtpScreen> {
 
   final _formKey = GlobalKey<FormState>();
   final OtpController _otpController = Get.put(OtpController());
+ 
 
   void _submitOtp() async {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
 
-      _otpController.verifyOTP(
-        context,
+      _otpController.verifyOTP(context,
           verificationId: widget.verificationId, otp: otpController.text);
     }
   }
@@ -89,7 +89,6 @@ class _OtpScreenState extends State<OtpScreen> {
                       return null;
                     }
                   },
-                  
                   autoDisposeControllers: false,
                 ),
                 const SizedBox(height: 25),

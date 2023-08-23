@@ -10,14 +10,32 @@ import '../../data/Medicine_repository/Medicine_repository.dart';
 
 class MedicineListScreen extends StatelessWidget {
   const MedicineListScreen({super.key});
-
-  // Future<List<Medicine>> _loadMedicineData() async {
-  //   final String jsonString =
-  //       await rootBundle.loadString('assets/medicine_data.json');
-  //   final List<dynamic> jsonData = json.decode(jsonString);
-
-  //   return jsonData.map((item) => Medicine.fromJson(item)).toList();
-  // }
+  void _showLogoutConfirmation(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Logout Confirmation'),
+          content: const Text('Are you sure you want to log out?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                FirebaseAuth.instance.signOut();
+              },
+              child: const Text('Logout'),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +45,7 @@ class MedicineListScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              FirebaseAuth.instance.signOut();
+              _showLogoutConfirmation(context);
             },
             icon: const Icon(Icons.logout),
           ),
