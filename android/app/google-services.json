@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "93213716675",
+    "project_id": "healthlab-5fa81",
+    "storage_bucket": "healthlab-5fa81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93213716675:android:6b63823ffc2dbbabfa7276",
+        "android_client_info": {
+          "package_name": "com.example.healthlab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93213716675-gu96v65s5v3e98bq5j0o98enngk2o02c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8J4nyi_LKme12lQfpRilRe93DdR6Crjo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93213716675-gu96v65s5v3e98bq5j0o98enngk2o02c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
