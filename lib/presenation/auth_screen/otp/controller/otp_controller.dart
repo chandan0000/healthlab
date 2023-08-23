@@ -27,7 +27,7 @@ class OtpController extends GetxController {
             ),
           );
         });
-        Get.to(const MedicineListScreen());
+        Get.offAll(const MedicineListScreen());
       }
     } on FirebaseAuthException catch (ex) {
       log("error message otp: $ex");
